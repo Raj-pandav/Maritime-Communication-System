@@ -1,5 +1,5 @@
-const messageModel = require("../Models/message.model")
-const shipModel = require("../Models/ship.model")
+const messageModel = require("../models/message.model")
+const shipModel = require("../models/ship.model")
 const { buildGraph, dijkstra, bfs } = require("../utils/graph")
 
 async function sendMessage(req, res) {
