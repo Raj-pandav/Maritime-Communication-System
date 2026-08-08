@@ -1,5 +1,5 @@
 const express = require("express")
-const {startSim,stopSim} = require("../Controllers/simulation.controller")
+const {startSim,stopSim} = require("../controllers/simulation.controller")
 
 
 const router = express.Router()
