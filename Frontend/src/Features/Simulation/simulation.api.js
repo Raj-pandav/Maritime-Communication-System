@@ -2,7 +2,14 @@ import { API } from "./simulation.constants";
 
 export async function fetchAllShips() {
   const res = await fetch(`${API}/ship`);
-  return res.json();
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message || `Server error: ${res.status}`);
+  }
+
+  return data;
 }
 
 export async function sendMessage(payload) {
@@ -17,10 +24,19 @@ export async function sendMessage(payload) {
 export async function addNewShip(shipData) {
   const res = await fetch(`${API}/ship/add`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(shipData),
   });
-  return res.json();
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message || `Server error: ${res.status}`);
+  }
+
+  return data;
 }
 
 export async function removeShip(id) {
