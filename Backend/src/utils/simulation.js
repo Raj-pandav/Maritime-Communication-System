@@ -1,5 +1,5 @@
-const shipModel = require("../Models/ship.model")
-const messageModel = require("../Models/message.model")
+const shipModel = require("../models/ship.model")
+const messageModel = require("../models/message.model")
 const { buildGraph, dijkstra } = require("./graph")
 
 const MAX_X = 800
