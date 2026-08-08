@@ -1,5 +1,5 @@
 const express = require("express")
-const {findPath} = require("../Controllers/pathfind.controller")
+const {findPath} = require("../controllers/pathfind.controller")
 
 const router = express.Router()
 
