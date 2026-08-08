@@ -1,6 +1,6 @@
 const express = require("express")
 
-const {sendMessage,getMessages,getBuffer} = require("../Controllers/message.controller")
+const {sendMessage,getMessages,getBuffer} = require("../controllers/message.controller")
 
 const router = express.Router()
 
