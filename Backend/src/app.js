@@ -1,8 +1,8 @@
 const express = require("express")
-const shipRoutes = require("./Routes/ship.routes")
-const pathfindRoutes = require("./Routes/pathfind.routes")
-const simulationRoutes = require("./Routes/simulation.routes")
-const messageRoutes = require("./Routes/message.routes")
+const shipRoutes = require("./routes/ship.routes")
+const pathfindRoutes = require("./routes/pathfind.routes")
+const simulationRoutes = require("./routes/simulation.routes")
+const messageRoutes = require("./routes/message.routes")
 const cors = require("cors")
 
 const app = express()
