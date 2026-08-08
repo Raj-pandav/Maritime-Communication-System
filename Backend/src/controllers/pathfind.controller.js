@@ -1,4 +1,4 @@
-const shipModel = require("../Models/ship.model")
+const shipModel = require("../models/ship.model")
 const { buildGraph, dijkstra, bfs } = require("../utils/graph");
 
 
