@@ -1,4 +1,4 @@
-const shipModel = require("../Models/ship.model")
+const shipModel = require("../models/ship.model")
 
 
 async function getAllShips(req,res){
