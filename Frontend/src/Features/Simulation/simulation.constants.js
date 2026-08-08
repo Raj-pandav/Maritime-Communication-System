@@ -1,5 +1,5 @@
-export const API = "http://localhost:3000/api";
-export const SOCKET_URL = "http://localhost:3000";
+export const API = "https://maritime-communication-system.onrender.com/api";
+export const SOCKET_URL = "https://maritime-communication-system.onrender.com";
 export const GRID_W = 800;
 export const GRID_H = 600;
 export const COMM_RANGE = 150;
