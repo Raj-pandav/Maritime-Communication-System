@@ -188,23 +188,46 @@ export default function Dashboard() {
   }
 
   async function handleAddShip(e) {
-    e.preventDefault();
-    try {
-      await addNewShip({
-        ...newShip,
-        x: Number(newShip.x),
-        y: Number(newShip.y),
-        speed: Number(newShip.speed),
-        status: "moving",
-      });
-      addLog(`Ship "${newShip.name}" added`, "success");
-      setNewShip({ name: "", x: "", y: "", speed: "15", status: "moving" });
-      setShowAddShip(false);
-      fetchShips();
-    } catch (e) {
-      console.log(e)
-    }
+  e.preventDefault();
+
+  try {
+    const shipData = {
+      name: newShip.name.trim(),
+      x: Number(newShip.x),
+      y: Number(newShip.y),
+      speed: Number(newShip.speed),
+      status: "moving",
+    };
+
+    console.log("Sending ship:", shipData);
+
+    const result = await addNewShip(shipData);
+
+    console.log("Ship created:", result);
+
+    addLog(`Ship "${shipData.name}" added successfully`, "success");
+
+    setNewShip({
+      name: "",
+      x: "",
+      y: "",
+      speed: "15",
+      status: "moving",
+    });
+
+    setShowAddShip(false);
+
+    await fetchShips();
+
+  } catch (error) {
+    console.error("ADD SHIP ERROR:", error);
+
+    addLog(
+      `Failed to add ship: ${error.message}`,
+      "error"
+    );
   }
+}
 
   async function handleDeleteShip(id, name) {
     await removeShip(id);
