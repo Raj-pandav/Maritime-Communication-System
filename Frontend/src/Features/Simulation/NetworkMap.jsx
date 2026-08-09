@@ -81,8 +81,14 @@ export default function NetworkMap({
                        : "#475569";
 
             return (
-              <g key={ship._id} transform={`translate(${ship.x},${ship.y})`}>
-                {/* Pulse ring for source/dest */}
+                               <g
+                    key={ship._id}
+                    transform={`translate(${ship.x},${ship.y})`}
+                    style={{
+                      transition: "transform 120ms linear",
+                    }}
+                  >
+                                  {/* Pulse ring for source/dest */}
                 {(isSrc || isDst) && (
                   <circle
                     r={22} fill="none"
